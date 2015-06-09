@@ -7,7 +7,7 @@ Vagrant.configure(2) do |configs|
     config.vm.box = "ubuntu/trusty64"
   end
 
-  configs.vm.define "support" do |config|
+  configs.vm.define "tools" do |config|
     config.vm.box = "ubuntu/trusty64"
   end
 
