@@ -4,5 +4,8 @@
   roles:
     - apt-cache-update
     - jdk7
-    - tomcat
 
+- hosts: prod
+  sudo: true
+  roles:
+    - tomcat
