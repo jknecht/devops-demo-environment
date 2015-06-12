@@ -13,5 +13,6 @@
 - hosts: tools
   sudo: true
   roles:
+    - gitlab
     - tomcat
     - jenkins
