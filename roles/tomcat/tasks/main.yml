@@ -24,5 +24,5 @@
 - name: Start Tomcat
   service: name=tomcat state=started enabled=yes
 
-- name: wait for tomcat to start
+- name: Listen for tomcat
   wait_for: port=8080

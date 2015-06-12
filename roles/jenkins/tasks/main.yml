@@ -1,0 +1,7 @@
+---
+- name: Download Jenkins
+  get_url: url=http://mirrors.jenkins-ci.org/war/latest/jenkins.war dest=~/jenkins.war
+
+- name: Deploy the war to tomcat
+  command: cp ~/jenkins.war /usr/share/tomcat/webapps/jenkins.war
+  sudo: True

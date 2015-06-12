@@ -9,3 +9,9 @@
   sudo: true
   roles:
     - tomcat
+
+- hosts: tools
+  sudo: true
+  roles:
+    - tomcat
+    - jenkins
