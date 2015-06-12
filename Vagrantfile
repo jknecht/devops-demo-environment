@@ -5,11 +5,15 @@ Vagrant.configure(2) do |configs|
 
   configs.vm.define "prod" do |config|
     config.vm.box = "ubuntu/trusty64"
+    config.vm.network "forwarded_port", guest: 8080, host: 8080
+    config.vm.provision :ansible do |ansible|
+      ansible.playbook = "playbook.yml"
+    end
   end
 
-  configs.vm.define "tools" do |config|
-    config.vm.box = "ubuntu/trusty64"
-  end
+  #configs.vm.define "tools" do |config|
+  #  config.vm.box = "ubuntu/trusty64"
+  #end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
