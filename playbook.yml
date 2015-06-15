@@ -14,5 +14,6 @@
   sudo: true
   roles:
     - gitlab
-    - tomcat
-    - jenkins
+    - git-repos
+#    - tomcat
+#    - jenkins

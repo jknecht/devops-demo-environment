@@ -1,0 +1,15 @@
+---
+- name: Copy demo repository to gitlab directory
+  copy: src=demo.git dest=/var/opt/gitlab/git-data/repositories/demo_group owner=git group=git mode=770
+
+- name: Import the demo repository into gitlab
+  command: gitlab-rake gitlab:import:repos
+  sudo: True
+
+- name: Add all gitlab users to all groups
+  command: gitlab-rake gitlab:import:all_users_to_all_groups
+  sudo: True
+
+- name: Add all gitlab users to all projects
+  command: gitlab-rake gitlab:import:all_users_to_all_projects
+  sudo: True
